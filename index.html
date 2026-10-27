@@ -1,155 +1,1010 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mangesh | ML, Data Science & Full-Stack</title>
-<meta name="description" content="Portfolio of Mangesh: ML & AI, Data Science, Python, Java and full-stack projects.">
-<style>
-  :root { --bg:#0d1117; --card:#161b22; --line:#30363d; --text:#e6edf3; --muted:#8b949e; --accent:#58a6ff; }
-  @media (prefers-color-scheme: light) {
-    :root { --bg:#ffffff; --card:#f6f8fa; --line:#d0d7de; --text:#1f2328; --muted:#59636e; --accent:#0969da; }
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .wrap { max-width: 900px; margin: 0 auto; padding: 0 16px; }
-  nav { position: sticky; top: 0; background: var(--bg); border-bottom: 1px solid var(--line); z-index: 10; }
-  nav .wrap { display: flex; gap: 16px; padding: 12px 16px; overflow-x: auto; white-space: nowrap; }
-  nav strong { margin-right: auto; }
-  section { padding: 48px 0 8px; }
-  h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.15; }
-  h2 { font-size: 1.5rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
-  .muted { color: var(--muted); }
-  .hero { padding-top: 64px; }
-  .hero p { margin-top: 12px; max-width: 600px; }
-  .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-  .btn { padding: 9px 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--text); }
-  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag { font-size: .82rem; padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); }
-  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
-  .card h3 { font-size: 1.05rem; }
-  .card .tags { margin-top: auto; }
-  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-  .filters button { font: inherit; cursor: pointer; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--text); }
-  .filters button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .hide { display: none; }
-  footer { margin-top: 56px; padding: 24px 0; border-top: 1px solid var(--line); text-align: center; font-size: .9rem; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mangesh | ML, Data Science & Full-Stack</title>
+  <meta name="description" content="Portfolio of Mangesh: ML, data science, Python, Java, full-stack development, and AI projects." />
+  <style>
+    :root {
+      --bg: #07111d;
+      --bg-soft: #0d1828;
+      --card: rgba(15, 23, 42, 0.8);
+      --card-strong: #111c2b;
+      --panel: rgba(19, 31, 46, 0.9);
+      --line: rgba(148, 163, 184, 0.18);
+      --text: #e5eefb;
+      --muted: #9db2c8;
+      --primary: #7dd3fc;
+      --primary-2: #5eead4;
+      --accent: #8b5cf6;
+      --warning: #fbbf24;
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.5);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(125, 211, 252, 0.12), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.12), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: none; }
+
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 17, 29, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(125, 211, 252, 0.35);
+      background: rgba(125, 211, 252, 0.08);
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    section {
+      padding: 88px 0;
+    }
+
+    .hero {
+      padding-top: 72px;
+      padding-bottom: 64px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(94, 234, 212, 0.08);
+      border: 1px solid rgba(94, 234, 212, 0.2);
+      color: var(--primary-2);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 6vw, 4.7rem);
+      line-height: 1; 
+      letter-spacing: -0.06em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--primary-2), #f9a8d4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      margin-top: 18px;
+      max-width: 650px;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-color: transparent;
+      color: #07111d;
+      box-shadow: 0 18px 32px rgba(125, 211, 252, 0.25);
+    }
+
+    .button.secondary {
+      background: rgba(15, 23, 42, 0.75);
+      color: var(--text);
+    }
+
+    .mini-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .stat-box {
+      min-width: 140px;
+      padding: 14px 16px;
+      background: rgba(17, 28, 43, 0.8);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .stat-box strong {
+      font-size: 1.45rem;
+      display: block;
+      letter-spacing: -0.05em;
+    }
+
+    .stat-box span {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .profile-panel {
+      position: relative;
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(13, 24, 40, 0.82));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-glow {
+      position: absolute;
+      inset: 12px 12px auto auto;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle, rgba(125, 211, 252, 0.28), transparent 60%);
+      filter: blur(18px);
+    }
+
+    .profile-card {
+      position: relative;
+      padding: 26px 22px 20px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(8, 17, 27, 0.68);
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #04101a;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .profile-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.4rem;
+    }
+
+    .profile-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .list-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      background: rgba(148, 163, 184, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      color: var(--muted);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    .section-header h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      letter-spacing: -0.05em;
+    }
+
+    .section-header p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .about-grid p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .focus-grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .focus {
+      padding: 16px 16px 14px;
+      border-radius: 16px;
+      background: rgba(9, 18, 28, 0.75);
+      border: 1px solid var(--line);
+    }
+
+    .focus strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+    }
+
+    .focus span {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      height: 100%;
+    }
+
+    .metric {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 140px;
+      padding: 20px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(13, 24, 40, 0.9), rgba(15, 23, 42, 0.8));
+      border: 1px solid var(--line);
+    }
+
+    .metric strong {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      letter-spacing: -0.05em;
+    }
+
+    .metric span {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+      position: relative;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 22px 22px 22px 22px;
+      margin-left: 16px;
+      border-left: 2px solid rgba(125, 211, 252, 0.25);
+      background: rgba(11, 20, 31, 0.52);
+      border-radius: 0 18px 18px 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -9px;
+      top: 26px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow: 0 0 0 5px rgba(125, 211, 252, 0.08);
+    }
+
+    .timeline-item .meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 6px;
+      font-size: 1.2rem;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .skill-group {
+      padding: 22px;
+      background: rgba(12, 21, 33, 0.7);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+    }
+
+    .skill-group h3 {
+      margin: 0 0 18px;
+      font-size: 1.15rem;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-list span {
+      padding: 9px 12px;
+      border-radius: 12px;
+      background: rgba(148,163,184,0.06);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 0.86rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 22px;
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(125, 211, 252, 0.35);
+    }
+
+    .project-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin: 0 0 18px;
+      flex: 1;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .project-meta span {
+      display: inline-flex;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(125, 211, 252, 0.08);
+      border: 1px solid rgba(125, 211, 252, 0.16);
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: var(--primary-2);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .filters button {
+      border: 1px solid var(--line);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font: inherit;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filters button.active {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-color: transparent;
+      color: #09141f;
+      font-weight: 700;
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .program-card {
+      padding: 22px;
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+    }
+
+    .program-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.12rem;
+    }
+
+    .program-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .program-card a {
+      color: var(--primary-2);
+      font-weight: 700;
+    }
+
+    .hide { display: none !important; }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+    }
+
+    .contact-panel {
+      padding: 24px;
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(9, 18, 28, 0.7);
+    }
+
+    .contact-item span {
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .contact-item a {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 22px 0 40px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .contact-wrap,
+      .projects-grid,
+      .programs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .focus-grid,
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#top" class="brand">Mangesh</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<nav><div class="wrap">
-  <strong>Mangesh</strong>
-  <a href="#about">About</a><a href="#projects">Projects</a><a href="#programs">Programs</a><a href="#contact">Contact</a>
-</div></nav>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">ML • Data Science • Full-Stack</span>
+          <h1>
+            Hi, I’m <span class="gradient-text">Mangesh</span>
+          </h1>
+          <p class="lead">
+            MCA student at Mumbai University with a strong foundation in machine learning, analytics,
+            Python, Java, and product-minded software development. I enjoy building practical systems that turn raw data into clear insight and user-friendly products.
+          </p>
 
-<main class="wrap">
+          <div class="actions">
+            <a class="button primary" href="#projects">View Projects</a>
+            <a class="button secondary" href="https://github.com/goatz9" target="_blank" rel="noopener">GitHub</a>
+          </div>
 
-<section class="hero">
-  <h1>Hi, I'm Mangesh 👋</h1>
-  <p class="muted">ML &amp; AI | MCA @ Mumbai University. I build machine learning models, dashboards and full-stack apps with Python, SQL and React.</p>
-  <div class="btns">
-    <a class="btn primary" href="#projects">View projects</a>
-    <a class="btn" href="https://github.com/goatz9" target="_blank" rel="noopener">GitHub</a>
-    <!-- Add your resume: upload resume.pdf to this repo, then uncomment -->
-    <!-- <a class="btn" href="resume.pdf">Resume</a> -->
-  </div>
-</section>
+          <div class="mini-stats">
+            <div class="stat-box">
+              <strong>275+</strong>
+              <span>LeetCode problems</span>
+            </div>
+            <div class="stat-box">
+              <strong>10+</strong>
+              <span>Tech projects</span>
+            </div>
+            <div class="stat-box">
+              <strong>ML</strong>
+              <span>Data-focused mindset</span>
+            </div>
+          </div>
+        </div>
 
-<section id="about">
-  <h2>About</h2>
-  <p>I completed my BCA with a specialization in Machine Learning and Data Science and I'm now pursuing my MCA. I enjoy turning data into decisions and ideas into working apps, and I've solved 275+ problems on LeetCode (top 6.9% globally).</p>
-  <br>
-  <div class="tags">
-    <span class="tag">Python</span><span class="tag">Java</span><span class="tag">SQL</span>
-    <span class="tag">scikit-learn</span><span class="tag">Pandas</span><span class="tag">NumPy</span>
-    <span class="tag">Power BI</span><span class="tag">React</span><span class="tag">React Native</span><span class="tag">Flask</span>
-  </div>
-</section>
+        <div class="profile-panel">
+          <div class="profile-glow"></div>
+          <div class="profile-card">
+            <div class="avatar">M</div>
+            <h3>Mangesh</h3>
+            <p>Focused on AI, analytics, and software that solves real-world problems.</p>
+            <div class="list-inline">
+              <span class="tag">Python</span>
+              <span class="tag">Java</span>
+              <span class="tag">SQL</span>
+              <span class="tag">React</span>
+              <span class="tag">Flask</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="grid">
-    <!-- Update repo links if you rename repos -->
-    <article class="card">
-      <h3>Sonix</h3>
-      <p class="muted">Spotify-inspired mobile music app.</p>
-      <div class="tags"><span class="tag">React Native</span><span class="tag">Expo</span></div>
-      <a href="https://github.com/goatz9/Sonix" target="_blank" rel="noopener">View code →</a>
-    </article>
-    <article class="card">
-      <h3>IPL Analytics Dashboard</h3>
-      <p class="muted">Interactive analysis of IPL match and player data.</p>
-      <div class="tags"><span class="tag">Python</span><span class="tag">Data Analysis</span></div>
-      <a href="https://github.com/goatz9/IPL" target="_blank" rel="noopener">View code →</a>
-    </article>
-    <article class="card">
-      <h3>AI Translator</h3>
-      <p class="muted">Language translation app served with Flask.</p>
-      <div class="tags"><span class="tag">Flask</span><span class="tag">Python</span><span class="tag">NLP</span></div>
-      <a href="https://github.com/goatz9/AI-Translator-with-Flask---Jupyter" target="_blank" rel="noopener">View code →</a>
-    </article>
-  </div>
-</section>
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>About</h2>
+          <p>I blend analytical thinking with software craftsmanship to build systems that are meaningful, scalable, and usable.</p>
+        </div>
 
-<section id="programs">
-  <h2>Programs</h2>
-  <div class="filters" id="filters">
-    <button class="active" data-f="all">All</button>
-    <button data-f="python">Python</button>
-    <button data-f="java">Java</button>
-    <button data-f="dsa">DSA</button>
-    <button data-f="ml">ML</button>
-  </div>
-  <div class="grid" id="programs-grid">
-    <!-- Copy a card block for each program you add. data-cat can hold several words. -->
-    <article class="card" data-cat="python dsa">
-      <h3>Binary Search</h3>
-      <p class="muted">Iterative and recursive versions with complexity notes.</p>
-      <a href="https://github.com/goatz9/python-programs" target="_blank" rel="noopener">Python →</a>
-    </article>
-    <article class="card" data-cat="java">
-      <h3>Bank Account (OOP)</h3>
-      <p class="muted">Classes, encapsulation and exception handling in Java.</p>
-      <a href="https://github.com/goatz9/java-programs" target="_blank" rel="noopener">Java →</a>
-    </article>
-    <article class="card" data-cat="python ml">
-      <h3>Linear Regression from Scratch</h3>
-      <p class="muted">NumPy implementation compared with scikit-learn.</p>
-      <a href="https://github.com/goatz9/ml-algorithms" target="_blank" rel="noopener">ML →</a>
-    </article>
-  </div>
-</section>
+        <div class="about-grid">
+          <div class="card">
+            <p>
+              I completed my BCA with a specialization in Machine Learning and Data Science and am currently pursuing my MCA.
+              My interest lies in solving practical problems through data, automation, and product development. I enjoy transforming messy datasets into actionable insights, experimenting with models, and turning ideas into working applications.
+            </p>
+          </div>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Open to internships, entry-level roles and collaborations.</p>
-  <div class="btns">
-    <a class="btn" href="https://github.com/goatz9" target="_blank" rel="noopener">GitHub</a>
-    <a class="btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
-    <a class="btn" href="mailto:YOUR-EMAIL@example.com">Email</a>
-  </div>
-</section>
+          <div class="card">
+            <div class="focus-grid">
+              <div class="focus">
+                <strong>Machine Learning</strong>
+                <span>Model building, feature engineering, evaluation</span>
+              </div>
+              <div class="focus">
+                <strong>Data Analysis</strong>
+                <span>Pandas, NumPy, SQL, dashboards</span>
+              </div>
+              <div class="focus">
+                <strong>Full-Stack</strong>
+                <span>React, Flask, APIs, frontend-backend integration</span>
+              </div>
+              <div class="focus">
+                <strong>Problem Solving</strong>
+                <span>DSA, logic, clean architecture</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <section id="experience">
+      <div class="container">
+        <div class="section-header">
+          <h2>Education & Focus</h2>
+          <p>Building a strong foundation in both technical depth and practical problem-solving.</p>
+        </div>
 
-<footer class="muted">© <span id="year"></span> Mangesh · Built with plain HTML, CSS and JS</footer>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="meta">
+              <span>2024 – Present</span>
+              <span>MCA</span>
+            </div>
+            <h3>Mumbai University</h3>
+            <p>Continuing advanced study in software engineering, AI, and data-driven application design.</p>
+          </div>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  const buttons = document.querySelectorAll('#filters button');
-  const cards = document.querySelectorAll('#programs-grid .card');
-  buttons.forEach(b => b.addEventListener('click', () => {
-    buttons.forEach(x => x.classList.remove('active'));
-    b.classList.add('active');
-    const f = b.dataset.f;
-    cards.forEach(c => c.classList.toggle('hide', f !== 'all' && !c.dataset.cat.split(' ').includes(f)));
-  }));
-</script>
+          <div class="timeline-item">
+            <div class="meta">
+              <span>2021 – 2024</span>
+              <span>BCA / Specialization</span>
+            </div>
+            <h3>Machine Learning & Data Science</h3>
+            <p>Built the foundation in predictive modeling, analytics, and core CS concepts while developing practical projects.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="meta">
+              <span>Always learning</span>
+              <span>Self-driven</span>
+            </div>
+            <h3>Academic + Personal Projects</h3>
+            <p>Consistent work on Java, Python, data projects, and implementation-heavy problem solving.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2>Skills</h2>
+          <p>Core technologies and tools I work with across analysis, model building, and application development.</p>
+        </div>
+
+        <div class="skills-layout">
+          <div class="skill-group">
+            <h3>Programming</h3>
+            <div class="skill-list">
+              <span>Python</span>
+              <span>Java</span>
+              <span>JavaScript</span>
+              <span>SQL</span>
+              <span>C++</span>
+              <span>DSA</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Data & ML</h3>
+            <div class="skill-list">
+              <span>Pandas</span>
+              <span>NumPy</span>
+              <span>scikit-learn</span>
+              <span>Power BI</span>
+              <span>Data Cleaning</span>
+              <span>EDA</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Web & App</h3>
+            <div class="skill-list">
+              <span>React</span>
+              <span>React Native</span>
+              <span>Flask</span>
+              <span>REST APIs</span>
+              <span>Expo</span>
+              <span>HTML/CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Tools</h3>
+            <div class="skill-list">
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>Jupyter</span>
+              <span>VS Code</span>
+              <span>Postman</span>
+              <span>Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <p>Selected work spanning AI, analytics, and app development.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Sonix</h3>
+            <div class="project-meta">
+              <span>React Native</span>
+              <span>Expo</span>
+            </div>
+            <p>Spotify-inspired music app with mobile-first UI and a smooth listening experience concept.</p>
+            <a class="project-link" href="https://github.com/goatz9/Sonix" target="_blank" rel="noopener">View code →</a>
+          </article>
+
+          <article class="project-card">
+            <h3>IPL Analytics Dashboard</h3>
+            <div class="project-meta">
+              <span>Python</span>
+              <span>Data Analysis</span>
+            </div>
+            <p>Exploration of IPL data with insights into team patterns, player performance, and match trends.</p>
+            <a class="project-link" href="https://github.com/goatz9/IPL" target="_blank" rel="noopener">View code →</a>
+          </article>
+
+          <article class="project-card">
+            <h3>AI Translator</h3>
+            <div class="project-meta">
+              <span>Flask</span>
+              <span>Python</span>
+              <span>NLP</span>
+            </div>
+            <p>Language translation app using a lightweight backend service and interactive interface for text conversion.</p>
+            <a class="project-link" href="https://github.com/goatz9/AI-Translator-with-Flask---Jupyter" target="_blank" rel="noopener">View code →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs">
+      <div class="container">
+        <div class="section-header">
+          <h2>Practice Programs</h2>
+          <p>Focused implementation work in Python, Java, DSA, and ML foundations.</p>
+        </div>
+
+        <div class="filters" id="filters">
+          <button class="active" data-f="all">All</button>
+          <button data-f="python">Python</button>
+          <button data-f="java">Java</button>
+          <button data-f="dsa">DSA</button>
+          <button data-f="ml">ML</button>
+        </div>
+
+        <div class="programs-grid" id="programs-grid">
+          <article class="program-card" data-cat="python dsa">
+            <h3>Binary Search</h3>
+            <p>Implementation and explanation of iterative and recursive approaches with time complexity notes.</p>
+            <a href="https://github.com/goatz9/python-programs" target="_blank" rel="noopener">Python →</a>
+          </article>
+
+          <article class="program-card" data-cat="java">
+            <h3>Bank Account (OOP)</h3>
+            <p>Java-based class design using encapsulation, methods, and exception handling.</p>
+            <a href="https://github.com/goatz9/java-programs" target="_blank" rel="noopener">Java →</a>
+          </article>
+
+          <article class="program-card" data-cat="python ml">
+            <h3>Linear Regression from Scratch</h3>
+            <p>Custom ML implementation using NumPy with comparison to scikit-learn outputs.</p>
+            <a href="https://github.com/goatz9/ml-algorithms" target="_blank" rel="noopener">ML →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-wrap">
+        <div class="contact-panel">
+          <div class="section-header" style="margin-bottom: 0;">
+            <h2>Contact</h2>
+          </div>
+          <p style="margin-top: 14px; color: var(--muted);">
+            Open to internships, entry-level opportunities, and collaborations around data, AI, and product development.
+          </p>
+        </div>
+
+        <div class="contact-panel">
+          <div class="contact-list">
+            <div class="contact-item">
+              <span>GitHub</span>
+              <a href="https://github.com/goatz9" target="_blank" rel="noopener">github.com/goatz9</a>
+            </div>
+            <div class="contact-item">
+              <span>LinkedIn</span>
+              <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">Add your profile</a>
+            </div>
+            <div class="contact-item">
+              <span>Email</span>
+              <a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© <span id="year"></span> Mangesh</span>
+      <span>Built with HTML, CSS, and JavaScript</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const buttons = document.querySelectorAll('#filters button');
+    const cards = document.querySelectorAll('#programs-grid .program-card');
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        buttons.forEach((btn) => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.dataset.f;
+        cards.forEach((card) => {
+          const categories = card.dataset.cat ? card.dataset.cat.split(' ') : [];
+          const shouldShow = filter === 'all' || categories.includes(filter);
+          card.classList.toggle('hide', !shouldShow);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
+
