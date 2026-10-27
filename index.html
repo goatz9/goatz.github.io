@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mangesh | ML, Data Science & Full-Stack</title>
+<meta name="description" content="Portfolio of Mangesh: ML & AI, Data Science, Python, Java and full-stack projects.">
+<style>
+  :root { --bg:#0d1117; --card:#161b22; --line:#30363d; --text:#e6edf3; --muted:#8b949e; --accent:#58a6ff; }
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#ffffff; --card:#f6f8fa; --line:#d0d7de; --text:#1f2328; --muted:#59636e; --accent:#0969da; }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+  nav { position: sticky; top: 0; background: var(--bg); border-bottom: 1px solid var(--line); z-index: 10; }
+  nav .wrap { display: flex; gap: 16px; padding: 12px 16px; overflow-x: auto; white-space: nowrap; }
+  nav strong { margin-right: auto; }
+  section { padding: 48px 0 8px; }
+  h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.15; }
+  h2 { font-size: 1.5rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+  .muted { color: var(--muted); }
+  .hero { padding-top: 64px; }
+  .hero p { margin-top: 12px; max-width: 600px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+  .btn { padding: 9px 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--text); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-size: .82rem; padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); }
+  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .card h3 { font-size: 1.05rem; }
+  .card .tags { margin-top: auto; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .filters button { font: inherit; cursor: pointer; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--text); }
+  .filters button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .hide { display: none; }
+  footer { margin-top: 56px; padding: 24px 0; border-top: 1px solid var(--line); text-align: center; font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <strong>Mangesh</strong>
+  <a href="#about">About</a><a href="#projects">Projects</a><a href="#programs">Programs</a><a href="#contact">Contact</a>
+</div></nav>
+
+<main class="wrap">
+
+<section class="hero">
+  <h1>Hi, I'm Mangesh 👋</h1>
+  <p class="muted">ML &amp; AI | MCA @ Mumbai University. I build machine learning models, dashboards and full-stack apps with Python, SQL and React.</p>
+  <div class="btns">
+    <a class="btn primary" href="#projects">View projects</a>
+    <a class="btn" href="https://github.com/goatz9" target="_blank" rel="noopener">GitHub</a>
+    <!-- Add your resume: upload resume.pdf to this repo, then uncomment -->
+    <!-- <a class="btn" href="resume.pdf">Resume</a> -->
+  </div>
+</section>
+
+<section id="about">
+  <h2>About</h2>
+  <p>I completed my BCA with a specialization in Machine Learning and Data Science and I'm now pursuing my MCA. I enjoy turning data into decisions and ideas into working apps, and I've solved 275+ problems on LeetCode (top 6.9% globally).</p>
+  <br>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">Java</span><span class="tag">SQL</span>
+    <span class="tag">scikit-learn</span><span class="tag">Pandas</span><span class="tag">NumPy</span>
+    <span class="tag">Power BI</span><span class="tag">React</span><span class="tag">React Native</span><span class="tag">Flask</span>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <!-- Update repo links if you rename repos -->
+    <article class="card">
+      <h3>Sonix</h3>
+      <p class="muted">Spotify-inspired mobile music app.</p>
+      <div class="tags"><span class="tag">React Native</span><span class="tag">Expo</span></div>
+      <a href="https://github.com/goatz9/Sonix" target="_blank" rel="noopener">View code →</a>
+    </article>
+    <article class="card">
+      <h3>IPL Analytics Dashboard</h3>
+      <p class="muted">Interactive analysis of IPL match and player data.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Data Analysis</span></div>
+      <a href="https://github.com/goatz9/IPL" target="_blank" rel="noopener">View code →</a>
+    </article>
+    <article class="card">
+      <h3>AI Translator</h3>
+      <p class="muted">Language translation app served with Flask.</p>
+      <div class="tags"><span class="tag">Flask</span><span class="tag">Python</span><span class="tag">NLP</span></div>
+      <a href="https://github.com/goatz9/AI-Translator-with-Flask---Jupyter" target="_blank" rel="noopener">View code →</a>
+    </article>
+  </div>
+</section>
+
+<section id="programs">
+  <h2>Programs</h2>
+  <div class="filters" id="filters">
+    <button class="active" data-f="all">All</button>
+    <button data-f="python">Python</button>
+    <button data-f="java">Java</button>
+    <button data-f="dsa">DSA</button>
+    <button data-f="ml">ML</button>
+  </div>
+  <div class="grid" id="programs-grid">
+    <!-- Copy a card block for each program you add. data-cat can hold several words. -->
+    <article class="card" data-cat="python dsa">
+      <h3>Binary Search</h3>
+      <p class="muted">Iterative and recursive versions with complexity notes.</p>
+      <a href="https://github.com/goatz9/python-programs" target="_blank" rel="noopener">Python →</a>
+    </article>
+    <article class="card" data-cat="java">
+      <h3>Bank Account (OOP)</h3>
+      <p class="muted">Classes, encapsulation and exception handling in Java.</p>
+      <a href="https://github.com/goatz9/java-programs" target="_blank" rel="noopener">Java →</a>
+    </article>
+    <article class="card" data-cat="python ml">
+      <h3>Linear Regression from Scratch</h3>
+      <p class="muted">NumPy implementation compared with scikit-learn.</p>
+      <a href="https://github.com/goatz9/ml-algorithms" target="_blank" rel="noopener">ML →</a>
+    </article>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Open to internships, entry-level roles and collaborations.</p>
+  <div class="btns">
+    <a class="btn" href="https://github.com/goatz9" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="mailto:YOUR-EMAIL@example.com">Email</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="muted">© <span id="year"></span> Mangesh · Built with plain HTML, CSS and JS</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const buttons = document.querySelectorAll('#filters button');
+  const cards = document.querySelectorAll('#programs-grid .card');
+  buttons.forEach(b => b.addEventListener('click', () => {
+    buttons.forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const f = b.dataset.f;
+    cards.forEach(c => c.classList.toggle('hide', f !== 'all' && !c.dataset.cat.split(' ').includes(f)));
+  }));
+</script>
+</body>
+</html>
